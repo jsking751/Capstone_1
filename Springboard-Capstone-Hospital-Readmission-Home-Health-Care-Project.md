@@ -31,9 +31,11 @@ There are multiple clients who would take interest in the conclusions found in t
 3)	Patients:  While likely not a direct client, this information will better inform patients considering home health care.  Should a correlation be found, patients may be more swayed or dissuaded from utilizing home health care to reduce their overall cost and reduce the risk of hospital readmission.  Furthermore, patients could use this information to seek out home health care providers that rank high in specific quality measures that show a correlated reduction of hospital readmissions.
 
 4)	The US Government:  The Affordable Care Act was created by the US government to reform health care in the United States.  As such, the results of this analysis could be presented to the US government to either continue pursuing programs like the IAH or create incentives for providers, patients, and health insurance companies to utilize home health care providers, which may result in the creation of more home health care providers for areas in need.
+
+As shown above, the conclusions of this analysis could be applicable to a broad variety of interested parties.
 <br>
 <br>
-**3.  What data are you going to use for this? How will you acquire this data?:**
+**3. What data are you going to use for this? How will you acquire this data?:**
 
 CMS has provided open data to www.data.gov that contains 5 data sets regarding this analysis.  
 
@@ -48,7 +50,6 @@ Data Sets Include:
 3)	Additional home health care quality measures from April 1, 2015 to March 31, 2016 broken down by state average.
 
 4)	A dataset of Medicaid accepting home health care providers and their specific quality measures
-
 5)	A dataset indicating when each measure from the home health care quality survey was taken (this list indicates that the data taken is from April 1, 2015 to March 31, 2016 timeframe).
 
 https://catalog.data.gov/dataset/hospital-readmissions-reduction-program
