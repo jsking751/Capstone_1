@@ -33,8 +33,6 @@ There are multiple clients who would take interest in the conclusions found in t
 4)	The US Government:  The Affordable Care Act was created by the US government to reform health care in the United States.  As such, the results of this analysis could be presented to the US government to either continue pursuing programs like the IAH or create incentives for providers, patients, and health insurance companies to utilize home health care providers, which may result in the creation of more home health care providers for areas in need.
 <br>
 <br>
-
-
 **3.  What data are you going to use for this? How will you acquire this data?:**
 
 CMS has provided open data to www.data.gov that contains 5 data sets regarding this analysis.  
