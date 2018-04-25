@@ -16,7 +16,7 @@ The next focus was on correlations within the data to see if any HHC quality mea
 
 Finally, the variables associated with stronger correlations were analyzed to see if they were statistically significant.  Using an alpha of 0.01, statistically significant correlations were flagged as being potential answers in determining how HHC can reduce hospital readmissions.
 
-![Figure 1-1](/Figures%20rr_hist1.png "Figure 1-1")
+![Figure 1-1](/Capstone_1/Figures%20rr_hist1.png "Figure 1-1")
 ![Figure 1-2](/Figures%20rr_cdf.png "Figure 1-2")
 ![Figure 1-3](/Figures%20rr_hist2.png "Figure 1-3")
 ***
