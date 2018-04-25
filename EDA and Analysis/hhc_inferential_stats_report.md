@@ -16,9 +16,9 @@ The next focus was on correlations within the data to see if any HHC quality mea
 
 Finally, the variables associated with stronger correlations were analyzed to see if they were statistically significant.  Using an alpha of 0.01, statistically significant correlations were flagged as being potential answers in determining how HHC can reduce hospital readmissions.
 
-Figure 1-1 ![Figure 1-1](https://github.com/jsking751/Capstone_1/blob/master/Figures/rr_hist1.png)
-Figure 1-2 ![Figure 1-2](https://github.com/jsking751/Capstone_1/blob/master/Figures/rr_cdf.png)
-Figure 1-3 ![Figure 1-3](https://github.com/jsking751/Capstone_1/blob/master/Figures/rr_hist2.png)
+![Figure 1-1](https://github.com/jsking751/Capstone_1/blob/master/Figures/rr_hist1.png "Figure 1-1")
+![Figure 1-2](https://github.com/jsking751/Capstone_1/blob/master/Figures/rr_cdf.png "Figure 1-2")
+![Figure 1-3](https://github.com/jsking751/Capstone_1/blob/master/Figures/rr_hist2.png "Figure 1-3")
 ***
 **Findings:** 
 
@@ -27,14 +27,15 @@ What was discovered was both expected and surprising.  Most significantly, that 
 The negatively correlated measures (Figure 2-1 and 2-2) were associated with preventative care measures.   Specifically, higher flu and pneumonia shot ratings.  This was expected as the whole purpose of preventative care is to prevent serious illness that would require more extensive care or hospitalization.
 
 The positively correlated measures (Figures 2-3 – 2-6) were associated with the client improving.  Specifically, with regards to improved movement, healing, ability to take oral medications, and a decrease in movement pain.  This was highly unexpected as these ratings suggest that the client is recovering, or improving in their health. 
-Conclusion: 
+***
+**Conclusion:**
 
 There appears to be both expected and unexpected relationships between HHC quality measures and readmission ratios.  These strong relationships will help craft a story to help healthcare providers reduce hospital readmissions, and open up the door to future research on the subject.<br>
 
-![Figure 2-1](/Figures%20flu_shot.png "Figure 2-1")
-![Figure 2-2](/Figures%20pneumonia_shot.png "Figure 2-2")<br>
+![Figure 2-1](https://github.com/jsking751/Capstone_1/blob/master/Figures/flu_shot.png "Figure 2-1")
+![Figure 2-2](https://github.com/jsking751/Capstone_1/blob/master/Figures/pneumonia_shot.png "Figure 2-2")<br>
 
-![Figure 2-3](/Figures%20move_buff.png "Figure 2-3")
-![Figure 2-4](/Figures%20healing_buff.png "Figure 2-4")
-![Figure 2-5](/Figures%20oral_rx.png "Figure 2-5")
-![Figure 2-6](/Figures%20pain_debuff.png "Figure 2-6")
+![Figure 2-3](https://github.com/jsking751/Capstone_1/blob/master/Figures/move_buff.png "Figure 2-3")
+![Figure 2-4](https://github.com/jsking751/Capstone_1/blob/master/Figures/healing_buff.png "Figure 2-4")
+![Figure 2-5](https://github.com/jsking751/Capstone_1/blob/master/Figures/oral_rx.png "Figure 2-5")
+![Figure 2-6](https://github.com/jsking751/Capstone_1/blob/master/Figures/pain_debuff.png "Figure 2-6")
