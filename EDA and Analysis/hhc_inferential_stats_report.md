@@ -1,4 +1,4 @@
-## Inferential Statistics Report for Hospital Readmissions and Home-Health Care Quality <br>
+# Inferential Statistics Report for Hospital Readmissions and Home Health Care Quality <br>
 
 *Jonathan King*
 ***
