@@ -19,9 +19,9 @@ HHC providers are not the only clients that may take interest in this analysis. 
 ***
 **The Available Data:** 
 
-The Centers for Medicare and Medicaid Services (CMS) have provided open data to www.data.gov that contains 5 data sets regarding this analysis.  
+The Centers for Medicare and Medicaid Services (CMS) have provided numerous public datasets online, which include the 5 datasets used in this analysis.  
 
-Three of the five datasets have been utilized in this analysis.  The fourth will be held for future machine learning testing, and the fifth will be kept as an indicator of the timing for which the home health care quality survey was taken.
+Three of the five datasets have been utilized in this analysis.  The fourth will be held for future machine learning analysis, and the fifth will be kept as an indicator of the timing for which the home health care quality survey was taken.
 
 *Data Sets Include:*  
 
