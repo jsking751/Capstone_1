@@ -62,7 +62,7 @@ All the code used for cleaning the HHC data and merging the three datasets can b
 *Part 2: Data by Zip Code*
 <br><br>
 After exploratory data analysis (EDA), inferential statistics, and machine learning were applied to the grouped by states dataset (Data by State), I became unsatisfied with the results.  This was largely due to over 8,000 observations being reduced to a mere 51 observations.  As such, hospital zip codes were needed to meaningfully group the readmission data to the HHC Measures by Agency (HHC Agency) data.  
-<br><br>
+<br>
 The state and zip codes for health care providers associated with CMS were located on CMS’ website.  The Zip Code data set was easily merged to the readmission data though a pandas merge, resulting in a merger of the two datasets.  Prior to merging the two datasets, the readmission data was cleaned similarly to how it was wrangled in the Data by State dataset.
 <br><br>
 After the readmission and zip code data was merged it was time to munge the HHC Agency data.  Like the readmission data, columns were renamed and unhelpful columns were dropped out of the dataset.  Secondly, the nulls within the data were dropped by row resulting in a total of 8,344 observations.  Unlike the original HHC quality measures data, which was already grouped by state, the HHC Agency data had additional Boolean and categorical features.  These features were converted to numeric equivalents.  Zero and one for the Boolean features and zero through three for the categorical features.
@@ -87,32 +87,32 @@ The code used to create the Data by Hospital dataset can be found [here](https:/
 **Findings:** 
 <br><br>
 After applying some EDA and inferential statistics, several relationships were found in the Data by State.  For a quick heatmap overview of these relationships data, refer to Figure 1-1 below.  Some unsupervised machine learning was run on this data, which resulted in unsatisfying and uninformative clustering.  The goal of the unsupervised machine learning was to see if there were deeper relationships within the features of the data that may have contributed to a higher or lower readmission ratio.  After this initial machine learning exercise was completed, I decided more observations were needed.
-<br>
+
 ![Figure 1-1](https://github.com/jsking751/Capstone_1/blob/master/Figures/state_heatmap.png "Figure 1-1")
-<br>
+
 Following this determination, I then ran EDA on the Data by Zip Code.  As previously stated, I was shocked to discover none of the relationships I found between readmission ratio and HHC quality measures in the Data by State were present (Figure 1-2)
-<br>
+
 ![Figure 1-2](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_heatmap.png "Figure 1-2")
-<br>
+
 I knew there was significantly more variation in my data, so I decided to test various scaling methods to see if they would bring out any relationships hidden by noise within the data.  First, I tried scaling one of the quality measures by Ordinary Least Squares (OLS) Regression.  This resulted in an R-Squared of 0.001 and a P-value of 0.27 (Figure 1-3).  As such, I concluded this type of scaling model would unlikely produce any significant results.
 <br><br>
 ![Figure 1-3](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_ols.PNG "Figure 1-3")
-<br>
+
 I then used Scikit-Learn’s Standard Scaler to scale the data.  This produced a heatmap nearly identical to the heatmap generated without any applied scaling (Figure 1-4).
-<br>
+
 ![Figure 1-4](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_ss_heatmap.png "Figure 1-4")
-<br>
+
 For my final scaling technique, I tried Scikit-Learn’s Normalizer.  This produced a very interesting heatmap with some significant relationships (Figure 1-5).  However, Normalizer is typically used to find clusters in data.  To achieve this, Normalizer scales the data by observation, not by feature.  As such, while some of these relationships may be interesting, they would not amount to much in the form of an actionable conclusion for my client.  Subsequently, this heatmap was rejected for further analysis.
-<br>
+
 ![Figure 1-5](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_normalizer_heatmap.png "Figure 1-5")
-<br>
+
 The last EDA I ran was on the Data by Hospital.  This too resulted in a similar heatmap to the one produced in the Data by Zip Code (Figure 1-6).  I did not attempt any scaling techniques on this dataset as I learned, from the scaling attempts on the Data by Zip Code, that I would get similar outcomes.
-<br>
+
 ![Figure 1-6](https://github.com/jsking751/Capstone_1/blob/master/Figures/by_hospital_heatmap.png "Figure 1-6")
-<br>
-All code for the exploratory data analysis can be found in following notebooks:
-[Data by State EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/Capstone1_EDA_Part_1.ipynb) 
-[Data by Zip Code EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/Capstone1_EDA_Part_2.ipynb).
+
+All code for the exploratory data analysis can be found in following notebooks:<br>
+[Data by State EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/Capstone1_EDA_Part_1.ipynb)<br> 
+[Data by Zip Code EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/Capstone1_EDA_Part_2.ipynb).<br>
 [Data by Hospital EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/EDA_Part_3.ipynb).
 <br><br>
 All code for the inferential statistics can be found [here](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/inferential_stats.ipynb).
