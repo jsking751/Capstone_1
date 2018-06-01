@@ -70,7 +70,7 @@ After the readmission and zip code data was merged it was time to munge the HHC 
 Following the initial munging, extreme outliers were found within some of the features of the HHC Agency data.  A portion of these outliers did not make sense to the rest of the data.  For example, some features had float point ratings like “0.50”, when most of the ratings were represented as “50.0” to represent 50%.  Unfortunately, there were no notations within the data to indicate if these float ratings were accurate and could be converted to their percentile equivalent.  As such, I chose to filter out any outliers outside of 2.5 standard deviations.  I did not wish to remove all outliers using 2 standard deviations, as I felt non-extreme outliers could be considered legitimate ratings and should be included in my analysis.
 <br><br>
 Finally, like the Data by State, the excessive readmissions count was calculated for each zip code and the final dataset was crafted by grouping the data by zip code and merging the readmissions and HHC Agency data together in a merge.  This resulted in a final dataset with 820 observations.  
-<br><br>
+<br>
 It is important to note, most of the features were grouped by mean.  However, the categorical data was grouped by mode to indicate the majority category for each zip code.  Should a tie occur, the first category in the tie list was selected.
 <br><br>
 The code used to create the Data by Zip Code dataset can be found [here](https://github.com/jsking751/Capstone_1/blob/master/Data%20Munging/GroupBy_Zipcode.ipynb).
@@ -95,7 +95,7 @@ Following this determination, I then ran EDA on the Data by Zip Code.  As previo
 ![Figure 1-2](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_heatmap.png "Figure 1-2")
 <br>
 I knew there was significantly more variation in my data, so I decided to test various scaling methods to see if they would bring out any relationships hidden by noise within the data.  First, I tried scaling one of the quality measures by Ordinary Least Squares (OLS) Regression.  This resulted in an R-Squared of 0.001 and a P-value of 0.27 (Figure 1-3).  As such, I concluded this type of scaling model would unlikely produce any significant results.
-<br>
+<br><br>
 ![Figure 1-3](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_ols.PNG "Figure 1-3")
 <br>
 I then used Scikit-Learn’s Standard Scaler to scale the data.  This produced a heatmap nearly identical to the heatmap generated without any applied scaling (Figure 1-4).
@@ -134,7 +134,7 @@ Hospital readmission is a complex problem with many factors at play.  While ther
 *Search for or Generate More HHC Data to Analyze*
 <br><br>
 While CMS’ quality measures do not correlate with excessive hospital readmissions, other features in HHC might.  For example, the number of clinical staff, the total number of clients, or amount of funding all may be better indicators of how HHC impacts hospital readmission.  While beyond the scope of this analysis, future analysis may be done focusing on these features over quality features.  A great place to start would be any data produced by the IAH program.  This data may give insight as to which features played an important role in the reduction of hospital readmissions.
-<br>
+<br><br>
 *Analyze Star Rating*
 <br><br>
 One series of relationships that were pervasive throughout each EDA iteration, and visible in every heatmap within this report, is the relationship between star ratings and CMS’ other quality measures.  Some measures may be more important than others when it comes to a higher star rating.  As seen in Figure 2-1 below, some of these relationships have high correlation coefficients.   Furthermore, star ratings are very important to HHC Agencies as they are a means to attract clients, compete with other HHC Agencies, and may even create a stronger position for the agency when negotiating rates with insurance providers.  This is a thread I may follow up on myself should time permit.
