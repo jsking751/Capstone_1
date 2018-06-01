@@ -111,10 +111,10 @@ The last EDA I ran was on the Data by Hospital.  This too resulted in a similar 
 ![Figure 1-6](https://github.com/jsking751/Capstone_1/blob/master/Figures/by_hospital_heatmap.png "Figure 1-6")
 
 All code for the exploratory data analysis can be found in following notebooks:<br>
--   [Data by State EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/Capstone1_EDA_Part_1.ipynb)<
--   [Data by Zip Code EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/Capstone1_EDA_Part_2.ipynb).
--   [Data by Hospital EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/EDA_Part_3.ipynb).
-<br><br>
+-  [Data by State EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/Capstone1_EDA_Part_1.ipynb)
+-  [Data by Zip Code EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/Capstone1_EDA_Part_2.ipynb).
+-  [Data by Hospital EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/EDA_Part_3.ipynb).
+<br>
 All code for the inferential statistics can be found [here](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/inferential_stats.ipynb).
 <br><br>
 All code for the unsupervised machine learning can be found [here]( https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/Machine_Learning.ipynb)
