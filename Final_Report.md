@@ -90,7 +90,7 @@ After applying some EDA and inferential statistics, several relationships were f
 
 ![Figure 1-1](https://github.com/jsking751/Capstone_1/blob/master/Figures/state_heatmap.png "Figure 1-1")
 
-Following this determination, I then ran EDA on the Data by Zip Code.  As previously stated, I was shocked to discover none of the relationships I found between readmission ratio and HHC quality measures in the Data by State were present (Figure 1-2)
+Following this determination, I then ran EDA on the Data by Zip Code.  As previously stated, I was shocked to discover none of the relationships I found between readmission ratio and HHC quality measures in the Data by State were present (Figure 1-2).
 
 ![Figure 1-2](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_heatmap.png "Figure 1-2")
 
