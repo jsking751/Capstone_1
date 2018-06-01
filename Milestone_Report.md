@@ -52,13 +52,13 @@ The first step required was to clean the readmission data.  Unuseful columns we 
 
 Subsequently, after being cleaned, the data needed to be grouped down to the state level.  Since hospitals and HHC providers are often separate entities, grouping by state was the only way to meaningfully attached quality measures with the hospital readmission ratios.  Prior to grouping the data, a hospital count by state list and excessive readmission count by state list were created to be added into the final dataset.  Afterwards, each column was added into the final cleaned dataset through use of the groupby method on the state and calculating the sum or mean of the column where appropriate.
 
-All the code used for cleaning the hospital readmission data can be found [here](https://github.com/jsking751/Capstone_1/blob/master/readmissions_cleaning.ipynb).
+All the code used for cleaning the hospital readmission data can be found [here](https://github.com/jsking751/Capstone_1/blob/master/Data%20Munging/readmissions_cleaning.ipynb).
 
 Now it was time to clean and merge the HHC quality and additional quality measures datasets to the readmission dataset.  Fortunately, very little cleaning was required as the data was already grouped by state and next to no NaN objects were found.  As such, all that was required was dropping unuseful columns, renaming the remaining columns for ease of access, and merging the three datasets together into one by joining them on the state.  It is important to note that joining the data resulted in some observations being lost.  Those observations included US territories that were included in the HHC data, but not in the readmission data.
 
-All the code used for cleaning the HHC data and merging the three datasets can be found [here](https://github.com/jsking751/Capstone_1/blob/master/ratings_cleaning_merging.ipynb).
+All the code used for cleaning the HHC data and merging the three datasets can be found [here](https://github.com/jsking751/Capstone_1/blob/master/Data%20Munging/ratings_cleaning_merging.ipynb).
 
-Please note, the HHC Measures by Agency data was also cleaned to produce a tidy dataset.  Further details about this process will be provided should the data be used in the future.  The code used to clean the HHC Measures by Agency data can be found [here](https://github.com/jsking751/Capstone_1/blob/master/nongrouped_data_cleaning.ipynb).
+Please note, the HHC Measures by Agency data was also cleaned to produce a tidy dataset.  Further details about this process will be provided should the data be used in the future.  The code used to clean the HHC Measures by Agency data can be found [here](https://github.com/jsking751/Capstone_1/blob/master/Data%20Munging/GroupBy_Zipcode.ipynb).
 ***
 **Initial Findings:** 
 
