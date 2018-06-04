@@ -14,25 +14,25 @@ Another program created to combat hospital readmissions is the Independence at H
 <br><br>
 More information on the Readmission Reduction Program and IAH can be found [here](https://en.wikipedia.org/wiki/Hospital_readmission).
 <br><br>
-While the IAH has now concluded, thousands of  Home Health Care (HHC) providers exists to provide home health care for patients nationwide.  This analysis will focus on the relationships between hospital readmission rates and `HHC` Quality ratings to determine if high-quality home health care, does indeed play a role in reducing hospital readmissions.
+While the IAH has now concluded, thousands of  Home Health Care (HHC) providers exists to provide home health care for patients nationwide.  This analysis will focus on the relationships between hospital readmission rates and HHC quality ratings to determine if high-quality home health care, does indeed play a role in reducing hospital readmissions.
 <br>
 <br>
 **The Client:** 
 <br><br>
-`HHC providers` are the primary client for this analysis.  Should significant correlations be found, this would incentivize `HHC providers` to increase their quality ratings and open an additional opportunity to foster new relationships with local hospitals.  There are several measures that contribute to what is considered a high-quality `HHC provider`.  Should significant correlations exist within specific measures, `HHC providers` could create internal programs that focus on increasing those specific measures to reduce hospital readmission and improve their overall quality.
+HHC providers are the primary client for this analysis.  Should significant correlations be found, this would incentivize HHC providers to increase their quality ratings and open an additional opportunity to foster new relationships with local hospitals.  There are several measures that contribute to what is considered a high-quality HHC provider.  Should significant correlations exist within specific measures, HHC providers could create internal programs that focus on increasing those specific measures to reduce hospital readmission and improve their overall quality.
 <br><br>
-`HHC providers` are not the only clients that may take interest in this analysis.  Other interested parties may include hospitals, patients, and the US government.  These parties all have a shared interest in reducing hospital readmissions as a reduction would lead to reduced costs for all parties involved.
+HHC providers are not the only clients that may take interest in this analysis.  Other interested parties may include hospitals, patients, and the US government.  These parties all have a shared interest in reducing hospital readmissions as a reduction would lead to reduced costs for all parties involved.
 <br>
 <br>
 **The Data:**
 <br><br>
 The data used in this analysis includes the following:
 1.  The outcome of the Hospital Readmission Reduction Program, which indicates above-expected and as expected (or better) readmission rates of individual hospitals contracted to accept Medicaid from July 1, 2013 to June 30, 2016
-2.  `HHC quality measures` for April 1, 2015 to March 31, 2016, broken down by state average.
-3.  Additional `HHC quality measures` from April 1, 2015 to March 31, 2016 broken down by state average.
-4.  A dataset of Medicaid accepting `HHC providers` and their specific quality measures.
-5.  A dataset indicating when each measure from the `HHC quality` survey was taken (this list indicates that the data taken is from April 1, 2015 to March 31, 2016 timeframe).  
-6.  A dataset of zip codes for health care providers associated with CMS.  This dataset was used to scrape the zip codes of the hospitals listed in the Hospital Readmission dataset.
+2.  HHC quality measures for April 1, 2015 to March 31, 2016, broken down by state average.
+3.  Additional HHC quality measures from April 1, 2015 to March 31, 2016 broken down by state average.
+4.  A dataset of Medicaid accepting HHC providers and their specific quality measures.
+5.  A dataset indicating when each measure from the HHC quality survey was taken (this list indicates that the data taken is from April 1, 2015 to March 31, 2016 timeframe).  
+6.  A dataset of zip codes for health care providers associated with CMS.  This dataset was used to scrape the zip codes of the hospitals listed in the `Hospital readmission dataset (redmission data)`.
 <br><br>
 These data sets can be found at the following links below:
 -   [Hospital Readmission Reduciton Data](https://catalog.data.gov/dataset/hospital-readmissions-reduction-program)
@@ -40,44 +40,44 @@ These data sets can be found at the following links below:
 -   [HHC Measures by Agency Data](https://catalog.data.gov/dataset/home-health-care-agencies-c1765) 
 -   [CMS Health Care Provider Zipcodes](https://www.cms.gov/Research-Statistics-Data-and-Systems/Downloadable-Public-Use-Files/Provider-of-Services/POS2016.html)
 
-While other `HHC quality data` does exist as additional potential datasets, this data does not coincide with the timing of CMS’ hospital readmission reduction program, and thus has a more limited usefulness.
+While other HHC quality data does exist as additional potential datasets, this data does not coincide with the timing of CMS’ hospital readmission reduction program, and thus has a more limited usefulness.
 <br>
 <br>
 **Crafting the Datasets:**
 <br><br>
 *Part 1: Data by State*
 <br><br>
-The first dataset crafted in this analysis was a merged dataset of the hospital readmission data, the `HHC quality measures` data, and the `HHC additional quality measures` data.
+The first dataset crafted in this analysis was a merged dataset of the hospital `readmission data`, the HHC quality measures data, and the HHC additional quality measures data.
 <br><br>
-To begin, the readmission data needed to be munged.  Unuseful columns (Footnotes, Start and End Dates, ect.) were removed from the original dataset, and the remaining columns were renamed for ease of access while coding.  Furthermore, numeric data was coerced from its original object type to a float64 type.
+To begin, the `readmission data` needed to be munged.  Unuseful columns (Footnotes, Start and End Dates, ect.) were removed from the original dataset, and the remaining columns were renamed for ease of access while coding.  Furthermore, numeric data was coerced from its original object type to a float64 type.
 <br><br>
-Subsequently, after being cleaned, the next step of feature engineering was to be group the observations down to the state level.  Since hospitals and `HHC providers` are often separate entities, grouping by state was the simplest way to meaningfully attach `HHC quality measures` with the hospital readmission ratios.  Prior to grouping the data, a hospital count by state list and excessive readmission count by state list were created to be added into the final dataset.  Afterwards, each column was added into the final cleaned dataset through use of the groupby method on the state feature and calculating the sum or mean of the column where appropriate.
+Subsequently, after being cleaned, the next step of feature engineering was to be group the observations down to the state level.  Since hospitals and HHC providers are often separate entities, grouping by state was the simplest way to meaningfully attach HHC quality measures with the hospital readmission ratios.  Prior to grouping the data, a hospital count by state list and excessive readmission count by state list were created to be added into the final dataset.  Afterwards, each column was added into the final cleaned dataset through use of the groupby method on the state feature and calculating the sum or mean of the column where appropriate.
 <br><br>
-All the code used for cleaning the hospital readmission data can be found [here](https://github.com/jsking751/Capstone_1/blob/master/Data%20Munging/readmissions_cleaning.ipynb).
+All the code used for cleaning the hospital `readmission data` can be found [here](https://github.com/jsking751/Capstone_1/blob/master/Data%20Munging/readmissions_cleaning.ipynb).
 <br><br>
-Now it was time to clean both the `HHC quality and additional quality measures` datasets and merge them onto the readmission dataset.  Fortunately, very little cleaning was required as the data was already grouped by state and next to no NaN values were found.  As such, all that was required was dropping unuseful columns, renaming the remaining columns for ease of access, and merging the three datasets together into one through a merge on the state feature.  It is important to note that merging the data resulted in the loss of observations.  Those observations included U.S. territories that were included in the `HHC data`, but not in the readmission data.
+Now it was time to clean both the HHC quality and additional quality measures datasets and merge them onto the `readmission dataset`.  Fortunately, very little cleaning was required as the data was already grouped by state and next to no NaN values were found.  As such, all that was required was dropping unuseful columns, renaming the remaining columns for ease of access, and merging the three datasets together into one through a merge on the state feature.  It is important to note that merging the data resulted in the loss of observations.  Those observations included U.S. territories that were included in the HHC data, but not in the `readmission data`.
 <br><br>
 All the code used for cleaning the HHC data and merging the three datasets can be found [here](https://github.com/jsking751/Capstone_1/blob/master/Data%20Munging/ratings_cleaning_merging.ipynb).
 <br><br>
 *Part 2: Data by Zip Code*
 <br><br>
-After exploratory data analysis (EDA), inferential statistics, and machine learning were applied to the grouped by states dataset (Data by State), I became unsatisfied with the results.  This was largely due to over 8,000 observations being reduced to a mere 51 observations.  As such, hospital zip codes were needed to meaningfully group the readmission data to the HHC Measures by Agency (HHC Agency) data.  
+After exploratory data analysis (EDA), inferential statistics, and machine learning were applied to the grouped by states dataset (Data by State), I became unsatisfied with the results.  This was largely due to over 8,000 observations being reduced to a mere 51 observations.  As such, hospital zip codes were needed to meaningfully group the `readmission data` to the `HHC Measures by Agency (HHC Agency)` data.  
 <br>
-The state and zip codes for health care providers associated with CMS were located on CMS’ website.  The Zip Code data set was easily merged to the readmission data though a pandas merge, resulting in a merger of the two datasets.  Prior to merging the two datasets, the readmission data was cleaned similarly to how it was wrangled in the Data by State dataset.
+The state and zip codes for health care providers associated with CMS were located on CMS’ website.  The Zip Code dataset was easily merged to the `readmission data` though a pandas merge, resulting in a merger of the two datasets.  Prior to merging the two datasets, the `readmission data` was cleaned similarly to how it was wrangled in the `Data by State` dataset.
 <br><br>
-After the readmission and zip code data was merged it was time to munge the HHC Agency data.  Like the readmission data, columns were renamed and unhelpful columns were dropped out of the dataset.  Secondly, the nulls within the data were dropped by row resulting in a total of 8,344 observations.  Unlike the original HHC quality measures data, which was already grouped by state, the HHC Agency data had additional Boolean and categorical features.  These features were converted to numeric equivalents.  Zero and one for the Boolean features and zero through three for the categorical features.
+After the readmission and zip code data was merged it was time to munge the `HHC Agency data`.  Like the `readmission data`, columns were renamed and unhelpful columns (Footnotes, Start and End Dates, Provider Numbers, ect.) were dropped out of the dataset.  Secondly, the nulls within the data were dropped by row resulting in a total of 8,344 observations.  Unlike the original HHC quality measures data, which was already grouped by state, the `HHC Agency data` had additional Boolean and categorical features.  These features were converted to numeric equivalents.  Zero and one for the Boolean features and zero through three for the categorical features.
 <br><br>
-Following the initial munging, extreme outliers were found within some of the features of the HHC Agency data.  A portion of these outliers did not make sense to the rest of the data.  For example, some features had float point ratings like “0.50”, when most of the ratings were represented as “50.0” to represent 50%.  Unfortunately, there were no notations within the data to indicate if these float ratings were accurate and could be converted to their percentile equivalent.  As such, I chose to filter out any outliers outside of 2.5 standard deviations.  I did not wish to remove all outliers using 2 standard deviations, as I felt non-extreme outliers could be considered legitimate ratings and should be included in my analysis.
+Following the initial munging, extreme outliers were found within some of the features of the `HHC Agency data`.  A portion of these outliers appeared inconsistent to the rest of the data.  For example, some features had float point ratings like “0.50”, when most of the ratings were represented as “50.0” to represent 50%.  Unfortunately, there were no notations within the data to indicate if these float ratings were accurate and could be converted to their percentile equivalent.  As such, I chose to filter out any outliers outside of 2.5 standard deviations.  I did not wish to remove all outliers using 2 standard deviations, as I felt non-extreme outliers could be considered legitimate ratings and should be included in my analysis.
 <br><br>
-Finally, like the Data by State, the excessive readmissions count was calculated for each zip code and the final dataset was crafted by grouping the data by zip code and merging the readmissions and HHC Agency data together in a merge.  This resulted in a final dataset with 820 observations.  
+Finally, like the `Data by State`, the excessive readmissions count was calculated for each zip code and the final dataset was crafted by grouping the data by zip code and merging the readmissions and `HHC Agency data` together in a merge.  This resulted in a final dataset with 820 observations.  
 <br>
 It is important to note, most of the features were grouped by mean.  However, the categorical data was grouped by mode to indicate the majority category for each zip code.  Should a tie occur, the first category in the tie list was selected.
 <br><br>
-The code used to create the Data by Zip Code dataset can be found [here](https://github.com/jsking751/Capstone_1/blob/master/Data%20Munging/GroupBy_Zipcode.ipynb).
+The code used to create the `Data by Zip Code dataset` can be found [here](https://github.com/jsking751/Capstone_1/blob/master/Data%20Munging/GroupBy_Zipcode.ipynb).
 <br><br>
 *Part 3: Data by Hospital*
 <br><br>
-Much to my surprise, and discussed in greater detail in the following section, the strong correlations found in the Data by State were not present in the Data by Zip Code.  As such, I decided producing even more observations may unlock relationships within the two data sets.  To do this, I merged the cleaned readmission data with the HHC Agency data grouped by zip code.  This resulted in a dataset where each hospital observation now contained the HHC Agency data relevant to their shared zip code.
+My suspicion that the `Data by State` may not have included enough observations was confirmed when the strong correlations found in the `Data by State` were not present in the `Data by Zip Code`.  As such, I decided producing even more observations may unlock relationships within the two data sets.  To do this, I merged the cleaned `readmission data` with the `HHC Agency data` grouped by zip code.  This resulted in a dataset where each hospital observation now contained the `HHC Agency data` relevant to their shared zip code.
 <br><br>
 All techniques and decisions used were discussed previously in Parts 1 and 2 of this section.  One new feature was created, which was the number of HHC Agencies in each zip code.  This was calculated by grouping the agencies by zip code and calling count after the groupby method.  The final dataset resulted in an encouraging 5,882 observations. 
 <br><br>
@@ -86,29 +86,33 @@ The code used to create the Data by Hospital dataset can be found [here](https:/
 <br>
 **Findings:** 
 <br><br>
-After applying some EDA and inferential statistics, several relationships were found in the Data by State.  For a quick heatmap overview of these relationships data, refer to Figure 1-1 below.  Some unsupervised machine learning was run on this data, which resulted in unsatisfying and uninformative clustering.  The goal of the unsupervised machine learning was to see if there were deeper relationships within the features of the data that may have contributed to a higher or lower readmission ratio.  After this initial machine learning exercise was completed, I decided more observations were needed.
+After EDA and inferential statistics, several relationships were found in the `Data by State`.  For a quick heatmap overview of these relationships data, refer to Figure 1-1 below.  Some unsupervised machine learning was run on this data, which resulted in unsatisfying and uninformative clustering.  The goal of the unsupervised machine learning was to see if there were deeper relationships within the features of the data that may have contributed to a higher or lower readmission ratio.  After this initial machine learning exercise was completed, I decided more observations were needed.
 
 ![Figure 1-1](https://github.com/jsking751/Capstone_1/blob/master/Figures/state_heatmap.png "Figure 1-1")
 
-Following this determination, I then ran EDA on the Data by Zip Code.  As previously stated, I was shocked to discover none of the relationships I found between readmission ratio and HHC quality measures in the Data by State were present (Figure 1-2).
+Following this determination, I then ran EDA on the `Data by Zip Code`.  As previously stated, none of the relationships I found between readmission ratio and `HHC quality measures` in the `Data by State` were present (Figure 1-2).
 
 ![Figure 1-2](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_heatmap.png "Figure 1-2")
 
-I knew there was significantly more variation in my data, so I decided to test various scaling methods to see if they would bring out any relationships hidden by noise within the data.  First, I tried scaling one of the quality measures by Ordinary Least Squares (OLS) Regression.  This resulted in an R-Squared of 0.001 and a P-value of 0.27 (Figure 1-3).  As such, I concluded this type of scaling model would unlikely produce any significant results.
+I knew there was significantly more variation in my data by plotting out a box plot of the HHC quality measures (Figure 1-3).  As such, I decided to test various scaling methods to see if they would bring out any relationships hidden by noise within the data.
+<br>
+![Figure 1-3](https://github.com/jsking751/Capstone_1/blob/master/Figures/hhc_byzip_cats.png "Figure 1-3")
+
+First, I tried scaling one of the quality measures by Ordinary Least Squares (OLS) Regression.  This resulted in an R-Squared of 0.001 and a P-value of 0.27 (Figure 1-4).  As such, I concluded this type of scaling model would unlikely produce any significant results.
 <br><br>
-![Figure 1-3](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_ols.PNG "Figure 1-3")
+![Figure 1-4](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_ols.PNG "Figure 1-4")
 
-I then used Scikit-Learn’s Standard Scaler to scale the data.  This produced a heatmap nearly identical to the heatmap generated without any applied scaling (Figure 1-4).
+I then used Scikit-Learn’s Standard Scaler to scale the data.  This produced a heatmap nearly identical to the heatmap generated without any applied scaling (Figure 1-5).
 
-![Figure 1-4](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_ss_heatmap.png "Figure 1-4")
+![Figure 1-5](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_ss_heatmap.png "Figure 1-5")
 
-For my final scaling technique, I tried Scikit-Learn’s Normalizer.  This produced a very interesting heatmap with some significant relationships (Figure 1-5).  However, Normalizer is typically used to find clusters in data.  To achieve this, Normalizer scales the data by observation, not by feature.  As such, while some of these relationships may be interesting, they would not amount to much in the form of an actionable conclusion for my client.  Subsequently, this heatmap was rejected for further analysis.
+For my final scaling technique, I tried Scikit-Learn’s Normalizer.  This produced a very interesting heatmap with some significant relationships (Figure 1-6).  However, Normalizer is typically used to find clusters in data.  To achieve this, Normalizer scales the data by observation, not by feature.  As such, while some of these relationships may be interesting, they would not amount to much in the form of an actionable conclusion for my client.  Subsequently, this heatmap was rejected for further analysis.
 
-![Figure 1-5](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_normalizer_heatmap.png "Figure 1-5")
+![Figure 1-6](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_normalizer_heatmap.png "Figure 1-6")
 
-The last EDA I ran was on the Data by Hospital.  This too resulted in a similar heatmap to the one produced in the Data by Zip Code (Figure 1-6).  I did not attempt any scaling techniques on this dataset as I learned, from the scaling attempts on the Data by Zip Code, that I would get similar outcomes.
+The last EDA I ran was on the `Data by Hospital`.  This too resulted in a similar heatmap to the one produced in the `Data by Zip Code` (Figure 1-7).  I did not attempt any scaling techniques on this dataset as I learned, from the scaling attempts on the `Data by Zip Code`, that I would get similar outcomes.
 
-![Figure 1-6](https://github.com/jsking751/Capstone_1/blob/master/Figures/by_hospital_heatmap.png "Figure 1-6")
+![Figure 1-7](https://github.com/jsking751/Capstone_1/blob/master/Figures/by_hospital_heatmap.png "Figure 1-7")
 
 All code for the exploratory data analysis can be found in following notebooks:<br><br>
 [Data by State EDA](https://github.com/jsking751/Capstone_1/blob/master/EDA%20and%20Analysis/Capstone1_EDA_Part_1.ipynb)<br>
@@ -122,7 +126,7 @@ All code for the unsupervised machine learning can be found [here]( https://gith
 <br>
 **Conclusion:**
 <br><br>
-After an exhaustive review, I have concluded that there is no significant relationship between excessive hospital readmission and CMS’ HHC quality measures and star ratings.  While strong relationships were present on the Data by State level, they do not hold up once more observations are considered.
+After an exhaustive review, I have concluded that there is no significant relationship between excessive hospital readmission and CMS’ HHC quality measures and star ratings.  While strong relationships were present on the `Data by State` level, they do not hold up once more observations are considered.
 <br><br>
 However, this does not mean HHC Agencies do not impact the readmission ratios of hospitals.  As previously mentioned, the IAH program saw reductions to hospital readmissions and in consumer health care cost during its implementation.
 <br><br>
