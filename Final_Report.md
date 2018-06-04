@@ -10,28 +10,28 @@ A hospital readmission is broadly defined as a when a patient who has been disch
 <br><br>
 In 2010 the Centers for Medicare and Medicaid Services (CMS), under the Affordable Care Act, formally included hospital readmissions in reimbursement decisions.  Subsequently, penalizing health systems that have higher than expected readmission rates.  Specifically, this program was titled the Hospital Readmission Reduction Program.
 <br><br>
-Another program created to combat hospital readmissions is the Independence at Home Demonstration Program (IAH), which began in 2012.  This program provided mobile teams of physicians, nurse practitioners, pharmacists, social workers, and other providers to assist chronically ill Medicare patients in their homes.  The IAH found patients under their care saw fewer hospital readmissions, which resulted in an average savings of $3,070 in the first year, and $1,010 in the subsequent year.  This program was so successful that it was extended another two years beyond its original three-year window.
+Another program created to combat hospital readmissions is the Independence at Home Demonstration Program (IAH), which began in 2012.  This program provided mobile teams of physicians, nurse practitioners, pharmacists, social workers, and other providers to assist chronically ill Medicare patients in their homes.  The IAH found patients under their care saw a reduction hospital readmissions, which resulted in an average savings of $3,070 in the first year, and $1,010 in the subsequent year.  This program was so successful that it was extended another two years beyond its original three-year window.
 <br><br>
 More information on the Readmission Reduction Program and IAH can be found [here](https://en.wikipedia.org/wiki/Hospital_readmission).
 <br><br>
-While the IAH has now concluded, many Home Health Care (HHC) providers exists to provide home health care for patients.  This analysis will focus on the relationships between hospital readmission rates and HHC Quality ratings to determine if high-quality home health care, does indeed play a role in reducing hospital readmissions.
+While the IAH has now concluded, thousands of  Home Health Care (HHC) providers exists to provide home health care for patients nationwide.  This analysis will focus on the relationships between hospital readmission rates and `HHC` Quality ratings to determine if high-quality home health care, does indeed play a role in reducing hospital readmissions.
 <br>
 <br>
 **The Client:** 
 <br><br>
-HHC providers are the primary client for this analysis.  Should significant correlations be found, this would incentivize HHC providers to increase their quality ratings and open an additional opportunity to foster new relationships with local hospitals.  There are several measures that contribute to what is considered a high-quality HHC provider.  Should significant correlations exist within specific measures, HHC providers could create internal programs that focus on increasing those specific measures to reduce hospital readmission and improve their overall quality.
+`HHC providers` are the primary client for this analysis.  Should significant correlations be found, this would incentivize `HHC providers` to increase their quality ratings and open an additional opportunity to foster new relationships with local hospitals.  There are several measures that contribute to what is considered a high-quality `HHC provider`.  Should significant correlations exist within specific measures, `HHC providers` could create internal programs that focus on increasing those specific measures to reduce hospital readmission and improve their overall quality.
 <br><br>
-HHC providers are not the only clients that may take interest in this analysis.  Other interested parties may include hospitals, patients, and the US government.  These parties all have a shared interest in reducing hospital readmissions as a reduction would lead to reduced costs for all parties involved.
+`HHC providers` are not the only clients that may take interest in this analysis.  Other interested parties may include hospitals, patients, and the US government.  These parties all have a shared interest in reducing hospital readmissions as a reduction would lead to reduced costs for all parties involved.
 <br>
 <br>
 **The Data:**
 <br><br>
 The data used in this analysis includes the following:
 1.  The outcome of the Hospital Readmission Reduction Program, which indicates above-expected and as expected (or better) readmission rates of individual hospitals contracted to accept Medicaid from July 1, 2013 to June 30, 2016
-2.  HHC quality measures for April 1, 2015 to March 31, 2016, broken down by state average.
-3.  Additional HHC quality measures from April 1, 2015 to March 31, 2016 broken down by state average.
-4.  A dataset of Medicaid accepting HHC providers and their specific quality measures.
-5.  A dataset indicating when each measure from the HHC quality survey was taken (this list indicates that the data taken is from April 1, 2015 to March 31, 2016 timeframe).  
+2.  `HHC quality measures` for April 1, 2015 to March 31, 2016, broken down by state average.
+3.  Additional `HHC quality measures` from April 1, 2015 to March 31, 2016 broken down by state average.
+4.  A dataset of Medicaid accepting `HHC providers` and their specific quality measures.
+5.  A dataset indicating when each measure from the `HHC quality` survey was taken (this list indicates that the data taken is from April 1, 2015 to March 31, 2016 timeframe).  
 6.  A dataset of zip codes for health care providers associated with CMS.  This dataset was used to scrape the zip codes of the hospitals listed in the Hospital Readmission dataset.
 <br><br>
 These data sets can be found at the following links below:
@@ -40,22 +40,22 @@ These data sets can be found at the following links below:
 -   [HHC Measures by Agency Data](https://catalog.data.gov/dataset/home-health-care-agencies-c1765) 
 -   [CMS Health Care Provider Zipcodes](https://www.cms.gov/Research-Statistics-Data-and-Systems/Downloadable-Public-Use-Files/Provider-of-Services/POS2016.html)
 
-While other HHC quality data does exist as additional potential datasets, this data does not coincide with the timing of CMS’ hospital readmission reduction program, and thus has a more limited usefulness.
+While other `HHC quality data` does exist as additional potential datasets, this data does not coincide with the timing of CMS’ hospital readmission reduction program, and thus has a more limited usefulness.
 <br>
 <br>
 **Crafting the Datasets:**
 <br><br>
 *Part 1: Data by State*
 <br><br>
-The first dataset crafted in this analysis was a merged dataset of the hospital readmission data, the HHC quality measures data, and the HHC additional quality measures data.
+The first dataset crafted in this analysis was a merged dataset of the hospital readmission data, the `HHC quality measures` data, and the `HHC additional quality measures` data.
 <br><br>
-To begin, the readmission data needed to be munged.  Unuseful columns were removed from the original dataset, and the remaining columns were renamed for ease of access while coding.  Furthermore, numeric data was coerced from its original object type to a float64 type.
+To begin, the readmission data needed to be munged.  Unuseful columns (Footnotes, Start and End Dates, ect.) were removed from the original dataset, and the remaining columns were renamed for ease of access while coding.  Furthermore, numeric data was coerced from its original object type to a float64 type.
 <br><br>
-Subsequently, after being cleaned, the data needed to be grouped down to the state level.  Since hospitals and HHC providers are often separate entities, grouping by state was the simplest way to meaningfully attach HHC quality measures with the hospital readmission ratios.  Prior to grouping the data, a hospital count by state list and excessive readmission count by state list were created to be added into the final dataset.  Afterwards, each column was added into the final cleaned dataset through use of the groupby method on the state feature and calculating the sum or mean of the column where appropriate.
+Subsequently, after being cleaned, the next step of feature engineering was to be group the observations down to the state level.  Since hospitals and `HHC providers` are often separate entities, grouping by state was the simplest way to meaningfully attach `HHC quality measures` with the hospital readmission ratios.  Prior to grouping the data, a hospital count by state list and excessive readmission count by state list were created to be added into the final dataset.  Afterwards, each column was added into the final cleaned dataset through use of the groupby method on the state feature and calculating the sum or mean of the column where appropriate.
 <br><br>
 All the code used for cleaning the hospital readmission data can be found [here](https://github.com/jsking751/Capstone_1/blob/master/Data%20Munging/readmissions_cleaning.ipynb).
 <br><br>
-Now it was time to clean both the HHC quality and additional quality measures datasets and merge them onto the readmission dataset.  Fortunately, very little cleaning was required as the data was already grouped by state and next to no NaN values were found.  As such, all that was required was dropping unuseful columns, renaming the remaining columns for ease of access, and merging the three datasets together into one through a merge on the state feature.  It is important to note that merging the data resulted in some observations being lost.  Those observations included US territories that were included in the HHC data, but not in the readmission data.
+Now it was time to clean both the `HHC quality and additional quality measures` datasets and merge them onto the readmission dataset.  Fortunately, very little cleaning was required as the data was already grouped by state and next to no NaN values were found.  As such, all that was required was dropping unuseful columns, renaming the remaining columns for ease of access, and merging the three datasets together into one through a merge on the state feature.  It is important to note that merging the data resulted in the loss of observations.  Those observations included U.S. territories that were included in the `HHC data`, but not in the readmission data.
 <br><br>
 All the code used for cleaning the HHC data and merging the three datasets can be found [here](https://github.com/jsking751/Capstone_1/blob/master/Data%20Munging/ratings_cleaning_merging.ipynb).
 <br><br>
