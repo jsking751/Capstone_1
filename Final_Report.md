@@ -98,7 +98,7 @@ I knew there was significantly more variation in my data by plotting out a box p
 <br>
 ![Figure 1-3](https://github.com/jsking751/Capstone_1/blob/master/Figures/hhc_byzip_cats.png "Figure 1-3")
 
-First, I tried scaling one of the quality measures by Ordinary Least Squares (OLS) Regression.  This resulted in an R-Squared of 0.001 and a P-value of 0.27 (Figure 1-4).  As such, I concluded this type of scaling model would unlikely produce any significant results.
+First, I tried scaling multiple quality measures by Ordinary Least Squares (OLS) Regression.  This resulted in an R-Squared of 0.005 and a P-value no less than 0.202 (Figure 1-4).  As such, I concluded this type of scaling model would unlikely produce any significant results.
 <br><br>
 ![Figure 1-4](https://github.com/jsking751/Capstone_1/blob/master/Figures/zipcode_ols.PNG "Figure 1-4")
 
